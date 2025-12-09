@@ -1,0 +1,245 @@
+/* ==========================================================
+   Sistem Peminjaman Buku Perpustakaan Online
+   Creator: Rangga Anwar Ramadhan - 221011401214
+   File: style.css (Modern Dashboard & Buku)
+   ========================================================== */
+
+/* === GLOBAL STYLE === */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    background: #eef1f7;
+    color: #333;
+    display: flex;
+    min-height: 100vh;
+}
+
+/* ======================================================
+   SIDEBAR MODERN
+====================================================== */
+.sidebar {
+    width: 240px;
+    background: #1a73e8;
+    color: #fff;
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    padding: 25px 20px;
+    box-shadow: 3px 0 10px rgba(0,0,0,0.15);
+}
+
+.sidebar h2 {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 35px;
+}
+
+.sidebar a {
+    display: block;
+    text-decoration: none;
+    color: #fff;
+    padding: 12px 15px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    font-size: 15px;
+    transition: 0.25s;
+    font-weight: 500;
+}
+
+.sidebar a:hover,
+.sidebar .active {
+    background: #ffffff25;
+    transform: translateX(6px);
+}
+
+/* Logout button special */
+.sidebar a.logout {
+    background: #e74c3c;
+}
+.sidebar a.logout:hover {
+    background: #d62c1a;
+}
+
+/* ======================================================
+   CONTENT AREA
+====================================================== */
+.main-content {
+    margin-left: 240px; /* ruang untuk sidebar */
+    padding: 30px;
+    width: calc(100% - 240px);
+}
+
+.page-title {
+    font-size: 26px;
+    font-weight: 700;
+    margin-bottom: 25px;
+    border-left: 5px solid #1abc9c;
+    padding-left: 12px;
+    color: #2c3e50;
+}
+
+/* ======================================================
+   DASHBOARD CARDS
+====================================================== */
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    background: white;
+    padding: 25px 20px;
+    border-radius: 14px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.07);
+    transition: 0.25s ease;
+    text-align: center;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+}
+
+.card h3 {
+    font-size: 22px;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.card p {
+    font-size: 16px;
+    color: #555;
+}
+
+/* ======================================================
+   TABLE STYLE (Modern)
+====================================================== */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    border-radius: 12px;
+    overflow: hidden;
+    background: rgb(0, 0, 0);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+}
+
+table th {
+    background: #1a73e8;
+    color: white;
+    padding: 14px;
+    text-align: left;
+    font-weight: 600;
+}
+
+table td {
+    padding: 12px;
+    border-bottom: 1px solid #e6e6e6;
+}
+
+table tr:hover {
+    background: #f3f8ff;
+}
+
+/* ======================================================
+   BUTTONS
+====================================================== */
+.btn {
+    background: #1a73e8;
+    padding: 10px 18px;
+    color: white;
+    font-weight: 600;
+    border-radius: 8px;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    display: inline-block;
+    transition: 0.2s;
+}
+
+.btn:hover {
+    background: #1666c7;
+}
+
+.btn-danger {
+    background: #e74c3c;
+}
+.btn-danger:hover {
+    background: #c0392b;
+}
+
+/* ======================================================
+   FORM STYLE
+====================================================== */
+form label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 6px;
+    margin-top: 10px;
+}
+
+form input, 
+form select, 
+form textarea {
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    margin-bottom: 15px;
+    transition: 0.2s;
+}
+
+form input:focus, 
+form select:focus, 
+form textarea:focus {
+    border-color: #1a73e8;
+    box-shadow: 0 0 6px rgba(26,115,232,0.3);
+    outline: none;
+}
+
+/* ======================================================
+   FOOTER
+====================================================== */
+footer {
+    text-align: center;
+    margin-top: 50px;
+    padding: 20px;
+    color: #fff;
+    background: #2c3e50;
+    border-radius: 10px;
+}
+
+/* ======================================================
+   RESPONSIVE
+====================================================== */
+@media (max-width: 900px) {
+    .sidebar {
+        width: 200px;
+    }
+    .main-content {
+        margin-left: 200px;
+        width: calc(100% - 200px);
+    }
+}
+
+@media (max-width: 700px) {
+    .sidebar {
+        left: -240px;
+        transition: 0.3s;
+    }
+    .sidebar.show {
+        left: 0;
+    }
+
+    .main-content {
+        width: 100%;
+        margin-left: 0;
+    }
+}
